@@ -12,3 +12,11 @@ term : LIT                                   # Lit
 
 OP  : '+' | '-' | '*' | '/' ;
 LIT : '0' | [1-9][0-9]* ;
+WS : [ \t\r\n]+ -> skip ;
+
+// Commentaire sur une ligne
+LINE_COMMENT : '//' .*? '\n' -> skip ;
+
+// Commentaire multi-lignes
+MULTI_COMMENT : '/*' .*? '*/' -> skip ;
+
