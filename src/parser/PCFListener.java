@@ -18,6 +18,18 @@ public interface PCFListener extends ParseTreeListener {
 	 */
 	void exitProgram(PCFParser.ProgramContext ctx);
 	/**
+	 * Enter a parse tree produced by the {@code BinOp2}
+	 * labeled alternative in {@link PCFParser#term}.
+	 * @param ctx the parse tree
+	 */
+	void enterBinOp2(PCFParser.BinOp2Context ctx);
+	/**
+	 * Exit a parse tree produced by the {@code BinOp2}
+	 * labeled alternative in {@link PCFParser#term}.
+	 * @param ctx the parse tree
+	 */
+	void exitBinOp2(PCFParser.BinOp2Context ctx);
+	/**
 	 * Enter a parse tree produced by the {@code Cond}
 	 * labeled alternative in {@link PCFParser#term}.
 	 * @param ctx the parse tree
@@ -29,6 +41,18 @@ public interface PCFListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitCond(PCFParser.CondContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code BinOp1}
+	 * labeled alternative in {@link PCFParser#term}.
+	 * @param ctx the parse tree
+	 */
+	void enterBinOp1(PCFParser.BinOp1Context ctx);
+	/**
+	 * Exit a parse tree produced by the {@code BinOp1}
+	 * labeled alternative in {@link PCFParser#term}.
+	 * @param ctx the parse tree
+	 */
+	void exitBinOp1(PCFParser.BinOp1Context ctx);
 	/**
 	 * Enter a parse tree produced by the {@code Lit}
 	 * labeled alternative in {@link PCFParser#term}.
@@ -42,15 +66,39 @@ public interface PCFListener extends ParseTreeListener {
 	 */
 	void exitLit(PCFParser.LitContext ctx);
 	/**
-	 * Enter a parse tree produced by the {@code BinOp}
+	 * Enter a parse tree produced by the {@code Parens}
 	 * labeled alternative in {@link PCFParser#term}.
 	 * @param ctx the parse tree
 	 */
-	void enterBinOp(PCFParser.BinOpContext ctx);
+	void enterParens(PCFParser.ParensContext ctx);
 	/**
-	 * Exit a parse tree produced by the {@code BinOp}
+	 * Exit a parse tree produced by the {@code Parens}
 	 * labeled alternative in {@link PCFParser#term}.
 	 * @param ctx the parse tree
 	 */
-	void exitBinOp(PCFParser.BinOpContext ctx);
+	void exitParens(PCFParser.ParensContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code Var}
+	 * labeled alternative in {@link PCFParser#term}.
+	 * @param ctx the parse tree
+	 */
+	void enterVar(PCFParser.VarContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code Var}
+	 * labeled alternative in {@link PCFParser#term}.
+	 * @param ctx the parse tree
+	 */
+	void exitVar(PCFParser.VarContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code Let}
+	 * labeled alternative in {@link PCFParser#term}.
+	 * @param ctx the parse tree
+	 */
+	void enterLet(PCFParser.LetContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code Let}
+	 * labeled alternative in {@link PCFParser#term}.
+	 * @param ctx the parse tree
+	 */
+	void exitLet(PCFParser.LetContext ctx);
 }
