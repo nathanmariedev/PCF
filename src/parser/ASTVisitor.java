@@ -46,4 +46,21 @@ public class ASTVisitor extends PCFBaseVisitor<AST> {
     public AST visitParens(PCFParser.ParensContext ctx) {
         return visit(ctx.term());
     }
+
+    @Override
+    public AST visitVar(PCFParser.VarContext ctx) {
+        return new Var(ctx.getText());
+    }
+
+    /**
+     * Handle let-bindings (e.g., let x = 5 in x + 3)
+     */
+    @Override
+    public AST visitLet(PCFParser.LetContext ctx) {
+        String varName = ctx.VAR().getText();
+        Term boundValue = (Term) visit(ctx.term(0));
+        Term body = (Term) visit(ctx.term(1));
+        return new Let(varName, boundValue, body);
+    }
+
 }
