@@ -41,6 +41,18 @@ public class PCFBaseListener implements PCFListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
+	@Override public void enterApp(PCFParser.AppContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitApp(PCFParser.AppContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
 	@Override public void enterCond(PCFParser.CondContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -60,6 +72,18 @@ public class PCFBaseListener implements PCFListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitBinOp1(PCFParser.BinOp1Context ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterFix(PCFParser.FixContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitFix(PCFParser.FixContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -108,6 +132,18 @@ public class PCFBaseListener implements PCFListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitLet(PCFParser.LetContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterFun(PCFParser.FunContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitFun(PCFParser.FunContext ctx) { }
 
 	/**
 	 * {@inheritDoc}

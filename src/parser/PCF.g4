@@ -8,10 +8,13 @@ program : term EOF ;
 term : LIT                                   # Lit
      | term OP1 term                        # BinOp1
      | term OP2 term                        # BinOp2
-     | '(' term ')'                        # Parens
-     | 'ifz' term 'then' term 'else' term  # Cond
+     | term term                            # App
+     | '(' term ')'                         # Parens
+     | 'ifz' term 'then' term 'else' term   # Cond
      | VAR                                  # Var
      | 'let' VAR '=' term 'in' term         # Let
+     | 'fun' VAR '->' term                  # Fun
+     | 'fix' VAR term                       # Fix
      ;
 
 // Règles lexicales

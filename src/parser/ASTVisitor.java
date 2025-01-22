@@ -63,4 +63,17 @@ public class ASTVisitor extends PCFBaseVisitor<AST> {
         return new Let(varName, boundValue, body);
     }
 
+    @Override
+    public AST visitFix(PCFParser.FixContext ctx) {
+        String varTerm = ctx.VAR().getText();
+        Term fixedTerm = (Term) visit(ctx.term());
+        return new Fix(fixedTerm, varTerm);
+    }
+
+    @Override
+    public AST visitFun(PCFParser.FunContext ctx) {
+        String varTerm = ctx.VAR().getText();
+        Term funTerm = (Term) visit(ctx.term());
+        return new Fun(varTerm, funTerm);
+    }
 }

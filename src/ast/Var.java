@@ -4,7 +4,7 @@ package ast;
  * Represents a variable in the AST.
  */
 public class Var extends Term {
-    private final String name;
+    public final String name;
 
     public Var(String name) {
         this.name = name;

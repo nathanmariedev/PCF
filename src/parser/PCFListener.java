@@ -30,6 +30,18 @@ public interface PCFListener extends ParseTreeListener {
 	 */
 	void exitBinOp2(PCFParser.BinOp2Context ctx);
 	/**
+	 * Enter a parse tree produced by the {@code App}
+	 * labeled alternative in {@link PCFParser#term}.
+	 * @param ctx the parse tree
+	 */
+	void enterApp(PCFParser.AppContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code App}
+	 * labeled alternative in {@link PCFParser#term}.
+	 * @param ctx the parse tree
+	 */
+	void exitApp(PCFParser.AppContext ctx);
+	/**
 	 * Enter a parse tree produced by the {@code Cond}
 	 * labeled alternative in {@link PCFParser#term}.
 	 * @param ctx the parse tree
@@ -53,6 +65,18 @@ public interface PCFListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitBinOp1(PCFParser.BinOp1Context ctx);
+	/**
+	 * Enter a parse tree produced by the {@code Fix}
+	 * labeled alternative in {@link PCFParser#term}.
+	 * @param ctx the parse tree
+	 */
+	void enterFix(PCFParser.FixContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code Fix}
+	 * labeled alternative in {@link PCFParser#term}.
+	 * @param ctx the parse tree
+	 */
+	void exitFix(PCFParser.FixContext ctx);
 	/**
 	 * Enter a parse tree produced by the {@code Lit}
 	 * labeled alternative in {@link PCFParser#term}.
@@ -101,4 +125,16 @@ public interface PCFListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitLet(PCFParser.LetContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code Fun}
+	 * labeled alternative in {@link PCFParser#term}.
+	 * @param ctx the parse tree
+	 */
+	void enterFun(PCFParser.FunContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code Fun}
+	 * labeled alternative in {@link PCFParser#term}.
+	 * @param ctx the parse tree
+	 */
+	void exitFun(PCFParser.FunContext ctx);
 }
